@@ -31,7 +31,7 @@ scene.add(directionalLight);
 let model;
 const loader = new GLTFLoader();
 loader.load(
-    '/Media/pickling_cucumber/scene.gltf',
+    './Media/pickling_cucumber/scene.gltf',
     function (gltf) {
         model = gltf.scene; // Acceso al modelo
         model.scale.set(35, 35, 35); // Ajustar el tamaño del modelo según sea necesario
