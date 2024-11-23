@@ -1,0 +1,306 @@
+/* Estilos generales */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Parkinsans", sans-serif;
+    font-optical-sizing: auto;
+}
+body {
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Evita el desplazamiento horizontal */
+}
+.cabecera{
+    height: 8vh;    
+    display: flex;
+    flex-direction: row;
+    background-color: #f5f5dc; /* Beige claro */
+    color: #2e8b57; /* Texto verde oscuro */
+    font-size: 1.5rem;
+}
+.espacio{
+    height: 100%;
+    width: 60vw;
+}
+.cabecera ul {
+    display: flex;
+    flex-direction: row; /* Aseguramos que estén en línea horizontal */
+    width: 40vw;
+    list-style-type: none;
+    align-items: center;
+    justify-content: space-around;
+    border-right: 1px solid black;
+    margin: 0;
+    padding: 0;
+}
+
+.cabecera ul li {
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    position: relative;
+    transition: transform 0.3s ease, color 0.3s ease; /* Suaviza los cambios */
+}
+
+.cabecera ul li:hover {
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    cursor: pointer;
+    color: #2e8b57; /* Cambia a un verde llamativo o el color que prefieras */
+}
+
+.cabecera ul li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #2e8b57; /* Línea decorativa */
+    left: 50%;
+    bottom: -5px; /* Ajusta la distancia debajo del texto */
+    transition: width 0.3s ease, left 0.3s ease;
+}
+.pepino{
+    color: #ff4d4d; /* Rojo claro */
+    font-size: 2rem;
+}
+.cabecera ul li:hover::after {
+    width: 100%; /* Subrayado completo */
+    left: 0; /* Línea animada de centro hacia los bordes */
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 92vh; /* Ocupa toda la altura de la ventana */
+    /* background-image: url(Media/wallp.jpg); */
+    background: linear-gradient(to bottom left, rgb(5, 64, 25), rgb(16, 221, 40));
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    overflow: hidden; /* Evita el desbordamiento del contenido */
+}
+
+.pfp{
+    width: 15vw;
+    height: 30vh;
+    border-radius: 50%;
+}
+.hero-dark{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title{
+    line-height: 1;
+    text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.4), /* Sombra principal */
+    4px 4px 8px rgba(0, 0, 0, 0.2), /* Sombra extendida para profundidad */
+    6px 6px 12px rgba(0, 0, 0, 0.1); /* Sombra difusa externa */
+
+}
+.hero-text{
+    display: flex;
+    text-align: start;
+    flex-direction: column;
+    width: 30vw;
+    padding: 2vw;
+}
+
+/* Contenedor del modelo 3D */
+.model-container {
+    width: 40vw; /* Ancho relativo al 40% del ancho de la ventana */
+    height: 40vh; /* Alto relativo al 40% del alto de la ventana */
+    position: relative;
+    margin-bottom: 50px; /* Espacio debajo del modelo */
+}
+
+/* Estilo del título */
+.hero-title {
+    font-size: 5rem;
+    margin: 20px 0;
+}
+
+/* Estilo de la flecha */
+.scroll-down {
+    position: absolute;
+    bottom: 10%; /* Ajuste de la flecha para que esté centrada */
+    font-size: 6rem;
+    text-decoration: none;
+    color: white;
+    animation: bounce 2s infinite;
+}
+
+.scroll-down span {
+    display: inline-block;
+    font-size: 3rem;
+    animation: bounce 2s infinite;
+}
+
+/* Animación de la flecha */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+/* About Section */
+.about {
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+    background-image: url(Media/wallp.jpg);
+    background-size: cover;
+    height: 95vh;
+    width: 100vw;
+    color: #f5f5dc;
+    font-size: 3rem;
+    text-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.4), /* Sombra principal */
+    4px 4px 8px rgba(0, 0, 0, 0.2), /* Sombra extendida para profundidad */
+    6px 6px 12px rgba(0, 0, 0, 0.1); /* Sombra difusa externa */
+}
+
+/* Contenedor del carrusel */
+.carousel-item {
+    position: relative;
+    display: inline-block; /* Asegura que las imágenes se apilen horizontalmente */
+    overflow: hidden; /* Oculta cualquier contenido fuera del borde */
+}
+
+/* Estilo base para las imágenes */
+.carousel-item img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto al hacer hover en la imagen */
+.carousel-item:hover img {
+    cursor: pointer;
+    filter: brightness(0.5); /* Oscurece la imagen */
+    transform: scale(1.1); /* Escala la imagen ligeramente */
+}
+
+/* Texto superpuesto */
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centra el texto */
+    color: #fff; /* Texto blanco */
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0; /* Invisible por defecto */
+    transition: opacity 0.3s ease; /* Suaviza la transición */
+    pointer-events: none; /* Evita interferir con el hover */
+}
+
+/* Mostrar texto al hacer hover en el contenedor */
+.carousel-item:hover .overlay-text {
+    opacity: 1; /* Hace visible el texto */
+}
+
+footer {
+    height: 8vh;
+    width: 100vw;
+    background-color: #f5f5dc; /* Beige claro */
+    color: #2e8b57; /* Texto verde oscuro */
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+    font-family: monospace; /* Tipografía estilo consola */
+    font-size: 1.5rem;
+    overflow: hidden; /* Oculta el texto que aún no ha aparecido */
+    position: relative;
+}
+
+/* Contenedor del texto */
+.footer-text {
+    white-space: nowrap; /* Evita que el texto salte de línea */
+    overflow: hidden; /* Oculta el texto hasta que se "escriba" */
+    border-right: 2px solid white; /* Cursor estilo consola */
+    animation: typing 4s steps(30, end), blink 0.5s step-end infinite;
+}
+
+/* Animación de escritura */
+@keyframes typing {
+    from {
+        width: 0; /* Comienza sin mostrar nada */
+    }
+    to {
+        width: 100%; /* Muestra todo el texto */
+    }
+}
+
+/* Animación del cursor */
+@keyframes blink {
+    50% {
+        border-color: transparent; /* Hace que el cursor "desaparezca" */
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Contenedor del carrusel */
+.carousel-item-2 {
+    position: relative;
+    display: inline-block; /* Asegura que las imágenes se apilen horizontalmente */
+    overflow: hidden; /* Oculta cualquier contenido fuera del borde */
+}
+
+/* Estilo base para las imágenes */
+.carousel-item-2 img {
+    width: 40%;
+    max-width: 300px;
+    background-color: white;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10vw;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* Efecto al hacer hover en la imagen */
+.carousel-item-2:hover img {
+    cursor: pointer;
+    filter: brightness(0.5); /* Oscurece la imagen */
+    transform: scale(1.1); /* Escala la imagen ligeramente */
+}
+
+/* Mostrar texto al hacer hover en el contenedor */
+.carousel-item-2:hover .overlay-text {
+    opacity: 1; /* Hace visible el texto */
+}
+
+.d2{
+    border-radius: 100vw;
+}
